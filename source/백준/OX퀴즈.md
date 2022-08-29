@@ -1,4 +1,4 @@
-# 문제번호 문제제목
+# 8958 OX퀴즈
 
 [문제 보러가기](https://www.acmicpc.net/problem/8958)
 
