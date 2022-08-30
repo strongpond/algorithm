@@ -1,6 +1,6 @@
 # 문제번호 문제제목
 
-[문제 보러가기]()
+[문제 보러가기](https://www.acmicpc.net/problem/문제번호)
 
 ### :heavy_check_mark: 내가 푼 답안
 
