@@ -12,6 +12,10 @@
 
 -
 
+### blocker
+
+-
+
 ### 느낀점
 
 -
@@ -27,13 +31,3 @@ Thanks for
 ```
 
 <hr/>
-
-### :heavy_check_mark: 참고하면 좋은 다른 답안2
-
-Thanks for
-
-```javascript
-
-```
-
-<br/>
