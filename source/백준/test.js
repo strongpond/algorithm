@@ -5,19 +5,8 @@ const [n, ...arr] = require("fs")
   .trim()
   .split("\n");
 
-const coordinate = arr.map((e) => e.split(" ").map(Number));
-let result = "";
+// const [n, ...arr] = ['3', '21 Junkyu', '21 Dohyun', '20 Sunyoung'];
 
-coordinate
-  .sort((a, b) => {
-    if (a[0] === b[0]) {
-      return a[1] - b[1];
-    } else {
-      return a[0] - b[0];
-    }
-  })
-  .forEach((e) => {
-    result += `${e[0]} ${e[1]}\n`;
-  });
+const user = arr.map((e) => e.split(" ")).sort((a, b) => a[0] - b[0]);
 
-console.log(result);
+user.map((e) => console.log(`${e[0]} ${e[1]}`));
