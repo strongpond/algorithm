@@ -5,6 +5,19 @@ const [n, ...arr] = require("fs")
   .trim()
   .split("\n");
 
-arr.sort((a, b) => a - b);
+const coordinate = arr.map((e) => e.split(" ").map(Number));
+let result = "";
 
-arr.map((e) => console.log(e));
+coordinate
+  .sort((a, b) => {
+    if (a[0] === b[0]) {
+      return a[1] - b[1];
+    } else {
+      return a[0] - b[0];
+    }
+  })
+  .forEach((e) => {
+    result += `${e[0]} ${e[1]}\n`;
+  });
+
+console.log(result);
