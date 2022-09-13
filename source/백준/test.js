@@ -1,25 +1,29 @@
 const filePath = process.platform === "linux" ? "/dev/stdin" : "input.txt";
-const [n, ...arr] = require("fs")
+const [n, m, ...a] = require("fs")
   .readFileSync(filePath)
   .toString()
   .trim()
-  .split("\n");
+  .split(/\s+/);
 
-const person = arr.map((e) => e.split(" ").map(Number));
+const arr = a.map((e) => Number(e));
 
-let result = [];
-
-const weight = person.map((e) => e[0]);
-const height = person.map((e) => e[1]);
-
-for (let i = 0; i < n; i++) {
-  let rank = 1;
-  for (let j = 0; j < n; j++) {
-    if (weight[i] < weight[j] && height[i] < height[j]) {
-      rank += 1;
-    }
+const getCombinations = (array, selectNumber) => {
+  const results = [];
+  if (selectNumber === 1) {
+    return array.map((element) => [element]);
   }
-  result.push(rank);
-}
+  array.forEach((fixed, index, origin) => {
+    const rest = origin.slice(index + 1);
+    const combinations = getCombinations(rest, selectNumber - 1);
+    const attached = combinations.map((combination) => [fixed, ...combination]);
+    results.push(...attached);
+  });
+  return results;
+};
+const reducer = (accumulator, curr) => accumulator + curr;
+const newArr = getCombinations(arr, 3).map((e) => {
+  const sum = e.reduce(reducer);
+  return sum > m ? 0 : sum;
+});
 
-console.log(result.join(" "));
+console.log(Math.max(...newArr));
