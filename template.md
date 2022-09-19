@@ -24,8 +24,6 @@
 
 ### :heavy_check_mark: 참고하면 좋은 다른 답안
 
-Thanks for
-
 ```javascript
 
 ```
